@@ -1,0 +1,302 @@
+[
+  {
+    "case": 0,
+    "scenario": "same_person",
+    "reference": "MULTIPLE_FACES",
+    "probe": "MULTIPLE_FACES",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 3273.3
+  },
+  {
+    "case": 0,
+    "scenario": "different_person",
+    "reference": "MULTIPLE_FACES",
+    "probe": "OK",
+    "liveness_score": 0.9648584425449371,
+    "embedding_bytes": 512,
+    "similarity": null,
+    "ms_two_captures": 380.4
+  },
+  {
+    "case": 0,
+    "scenario": "blur",
+    "reference": "MULTIPLE_FACES",
+    "probe": "MULTIPLE_FACES",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 9.8
+  },
+  {
+    "case": 0,
+    "scenario": "small_face",
+    "reference": "MULTIPLE_FACES",
+    "probe": "MULTIPLE_FACES",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 32.1
+  },
+  {
+    "case": 0,
+    "scenario": "multiple_faces",
+    "reference": "MULTIPLE_FACES",
+    "probe": "MULTIPLE_FACES",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 16.0
+  },
+  {
+    "case": 0,
+    "scenario": "no_face",
+    "reference": "MULTIPLE_FACES",
+    "probe": "NO_FACE",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 8.7
+  },
+  {
+    "case": 1,
+    "scenario": "same_person",
+    "reference": "OK",
+    "probe": "OK",
+    "liveness_score": 0.9987793564796448,
+    "embedding_bytes": 512,
+    "similarity": 0.581,
+    "ms_two_captures": 194.1
+  },
+  {
+    "case": 1,
+    "scenario": "different_person",
+    "reference": "OK",
+    "probe": "OK",
+    "liveness_score": 0.9655551612377167,
+    "embedding_bytes": 512,
+    "similarity": 0.1097,
+    "ms_two_captures": 174.6
+  },
+  {
+    "case": 1,
+    "scenario": "blur",
+    "reference": "OK",
+    "probe": "LOW_QUALITY",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 97.9
+  },
+  {
+    "case": 1,
+    "scenario": "small_face",
+    "reference": "OK",
+    "probe": "LOW_QUALITY",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 122.0
+  },
+  {
+    "case": 1,
+    "scenario": "multiple_faces",
+    "reference": "OK",
+    "probe": "MULTIPLE_FACES",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 98.2
+  },
+  {
+    "case": 1,
+    "scenario": "no_face",
+    "reference": "OK",
+    "probe": "NO_FACE",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 181.2
+  },
+  {
+    "case": 2,
+    "scenario": "same_person",
+    "reference": "OK",
+    "probe": "OK",
+    "liveness_score": 0.9983983933925629,
+    "embedding_bytes": 512,
+    "similarity": 0.5782,
+    "ms_two_captures": 170.4
+  },
+  {
+    "case": 2,
+    "scenario": "different_person",
+    "reference": "OK",
+    "probe": "OK",
+    "liveness_score": 0.6788035333156586,
+    "embedding_bytes": 512,
+    "similarity": 0.232,
+    "ms_two_captures": 163.1
+  },
+  {
+    "case": 2,
+    "scenario": "blur",
+    "reference": "OK",
+    "probe": "LOW_QUALITY",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 75.2
+  },
+  {
+    "case": 2,
+    "scenario": "small_face",
+    "reference": "OK",
+    "probe": "LOW_QUALITY",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 168.0
+  },
+  {
+    "case": 2,
+    "scenario": "multiple_faces",
+    "reference": "OK",
+    "probe": "MULTIPLE_FACES",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 82.5
+  },
+  {
+    "case": 2,
+    "scenario": "no_face",
+    "reference": "OK",
+    "probe": "NO_FACE",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 84.0
+  },
+  {
+    "case": 3,
+    "scenario": "same_person",
+    "reference": "OK",
+    "probe": "MULTIPLE_FACES",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 70.1
+  },
+  {
+    "case": 3,
+    "scenario": "different_person",
+    "reference": "OK",
+    "probe": "OK",
+    "liveness_score": 0.9903473556041718,
+    "embedding_bytes": 512,
+    "similarity": -0.0152,
+    "ms_two_captures": 152.1
+  },
+  {
+    "case": 3,
+    "scenario": "blur",
+    "reference": "OK",
+    "probe": "MULTIPLE_FACES",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 106.2
+  },
+  {
+    "case": 3,
+    "scenario": "small_face",
+    "reference": "OK",
+    "probe": "LOW_QUALITY",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 118.1
+  },
+  {
+    "case": 3,
+    "scenario": "multiple_faces",
+    "reference": "OK",
+    "probe": "MULTIPLE_FACES",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 98.0
+  },
+  {
+    "case": 3,
+    "scenario": "no_face",
+    "reference": "OK",
+    "probe": "NO_FACE",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 134.3
+  },
+  {
+    "case": 4,
+    "scenario": "same_person",
+    "reference": "OK",
+    "probe": "OK",
+    "liveness_score": 0.5183817744255066,
+    "embedding_bytes": 512,
+    "similarity": 0.7152,
+    "ms_two_captures": 202.4
+  },
+  {
+    "case": 4,
+    "scenario": "different_person",
+    "reference": "OK",
+    "probe": "OK",
+    "liveness_score": 0.9613032341003418,
+    "embedding_bytes": 512,
+    "similarity": 0.0289,
+    "ms_two_captures": 315.8
+  },
+  {
+    "case": 4,
+    "scenario": "blur",
+    "reference": "OK",
+    "probe": "LOW_QUALITY",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 88.3
+  },
+  {
+    "case": 4,
+    "scenario": "small_face",
+    "reference": "OK",
+    "probe": "LOW_QUALITY",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 372.0
+  },
+  {
+    "case": 4,
+    "scenario": "multiple_faces",
+    "reference": "OK",
+    "probe": "MULTIPLE_FACES",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 99.6
+  },
+  {
+    "case": 4,
+    "scenario": "no_face",
+    "reference": "OK",
+    "probe": "NO_FACE",
+    "liveness_score": null,
+    "embedding_bytes": null,
+    "similarity": null,
+    "ms_two_captures": 101.0
+  }
+]

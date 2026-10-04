@@ -1,0 +1,12 @@
+# Modelos, código de terceiros baixado e imagens nunca são versionados.
+models/
+vendor/
+dataset/_raw/
+dataset/**/*.jpg
+dataset/**/*.jpeg
+dataset/**/*.png
+dataset/**/*.avi
+dataset/**/*.mp4
+dataset/**/*.webm
+dataset/manifest.json
+results/*.log

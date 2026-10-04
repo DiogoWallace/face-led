@@ -1,0 +1,216 @@
+{
+  "engine": "dlib-resnet",
+  "threshold_reference_eer_lfw": 0.6477,
+  "metric": "euclidean",
+  "scenarios": {
+    "same_person": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MULTIPLE_FACES": 5,
+        "MATCH": 43,
+        "REFERENCE_UNUSABLE": 1,
+        "NO_FACE": 1
+      },
+      "results_largest_face": {
+        "MATCH": 48,
+        "REFERENCE_UNUSABLE": 1,
+        "NO_FACE": 1
+      },
+      "score_mean": 0.4168,
+      "score_min": 0.2304,
+      "score_max": 0.5809,
+      "total_ms_mean": 155.12,
+      "cpu_pct_mean": 100.2,
+      "rss_mb_max": 115.4
+    },
+    "different_person": {
+      "n": 50,
+      "results_strict_single_face": {
+        "NO_MATCH": 41,
+        "MATCH": 2,
+        "MULTIPLE_FACES": 6,
+        "REFERENCE_UNUSABLE": 1
+      },
+      "results_largest_face": {
+        "NO_MATCH": 47,
+        "MATCH": 2,
+        "REFERENCE_UNUSABLE": 1
+      },
+      "score_mean": 0.8427,
+      "score_min": 0.6354,
+      "score_max": 1.0866,
+      "total_ms_mean": 156.89,
+      "cpu_pct_mean": 99.8,
+      "rss_mb_max": 115.4
+    },
+    "lighting_dark": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MULTIPLE_FACES": 3,
+        "MATCH": 45,
+        "REFERENCE_UNUSABLE": 1,
+        "NO_FACE": 1
+      },
+      "results_largest_face": {
+        "MATCH": 48,
+        "REFERENCE_UNUSABLE": 1,
+        "NO_FACE": 1
+      },
+      "score_mean": 0.4264,
+      "score_min": 0.2512,
+      "score_max": 0.6072,
+      "total_ms_mean": 153.45,
+      "cpu_pct_mean": 100.4,
+      "rss_mb_max": 115.4
+    },
+    "lighting_bright": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MULTIPLE_FACES": 5,
+        "MATCH": 43,
+        "REFERENCE_UNUSABLE": 1,
+        "NO_FACE": 1
+      },
+      "results_largest_face": {
+        "MATCH": 48,
+        "REFERENCE_UNUSABLE": 1,
+        "NO_FACE": 1
+      },
+      "score_mean": 0.4224,
+      "score_min": 0.2728,
+      "score_max": 0.6052,
+      "total_ms_mean": 153.3,
+      "cpu_pct_mean": 100.5,
+      "rss_mb_max": 115.4
+    },
+    "camera_sim": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MULTIPLE_FACES": 4,
+        "MATCH": 44,
+        "REFERENCE_UNUSABLE": 1,
+        "NO_FACE": 1
+      },
+      "results_largest_face": {
+        "MATCH": 48,
+        "REFERENCE_UNUSABLE": 1,
+        "NO_FACE": 1
+      },
+      "score_mean": 0.4545,
+      "score_min": 0.2653,
+      "score_max": 0.6307,
+      "total_ms_mean": 154.34,
+      "cpu_pct_mean": 99.7,
+      "rss_mb_max": 115.4
+    },
+    "blur": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MATCH": 41,
+        "NO_FACE": 7,
+        "REFERENCE_UNUSABLE": 1,
+        "MULTIPLE_FACES": 1
+      },
+      "results_largest_face": {
+        "MATCH": 42,
+        "NO_FACE": 7,
+        "REFERENCE_UNUSABLE": 1
+      },
+      "score_mean": 0.5555,
+      "score_min": 0.4424,
+      "score_max": 0.6419,
+      "total_ms_mean": 141.99,
+      "cpu_pct_mean": 99.8,
+      "rss_mb_max": 115.4
+    },
+    "small_face": {
+      "n": 50,
+      "results_strict_single_face": {
+        "NO_FACE": 50
+      },
+      "results_largest_face": {
+        "NO_FACE": 50
+      },
+      "score_mean": null,
+      "score_min": null,
+      "score_max": null,
+      "total_ms_mean": 158.39,
+      "cpu_pct_mean": 103.1,
+      "rss_mb_max": 115.4
+    },
+    "occlusion_lower": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MULTIPLE_FACES": 3,
+        "MATCH": 21,
+        "NO_MATCH": 4,
+        "NO_FACE": 21,
+        "REFERENCE_UNUSABLE": 1
+      },
+      "results_largest_face": {
+        "NO_MATCH": 5,
+        "MATCH": 23,
+        "NO_FACE": 21,
+        "REFERENCE_UNUSABLE": 1
+      },
+      "score_mean": 0.5358,
+      "score_min": 0.3866,
+      "score_max": 0.7636,
+      "total_ms_mean": 107.2,
+      "cpu_pct_mean": 100.1,
+      "rss_mb_max": 115.4
+    },
+    "occlusion_eyes": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MULTIPLE_FACES": 1,
+        "NO_FACE": 45,
+        "NO_MATCH": 4
+      },
+      "results_largest_face": {
+        "NO_MATCH": 5,
+        "NO_FACE": 45
+      },
+      "score_mean": 0.6914,
+      "score_min": 0.651,
+      "score_max": 0.7501,
+      "total_ms_mean": 46.63,
+      "cpu_pct_mean": 99.3,
+      "rss_mb_max": 115.4
+    },
+    "multiple_faces": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MULTIPLE_FACES": 48,
+        "REFERENCE_UNUSABLE": 1,
+        "NO_MATCH": 1
+      },
+      "results_largest_face": {
+        "MATCH": 21,
+        "NO_MATCH": 28,
+        "REFERENCE_UNUSABLE": 1
+      },
+      "score_mean": 0.671,
+      "score_min": 0.3188,
+      "score_max": 1.0818,
+      "total_ms_mean": 185.45,
+      "cpu_pct_mean": 102.2,
+      "rss_mb_max": 115.5
+    },
+    "no_face": {
+      "n": 50,
+      "results_strict_single_face": {
+        "NO_FACE": 50
+      },
+      "results_largest_face": {
+        "NO_FACE": 50
+      },
+      "score_mean": null,
+      "score_min": null,
+      "score_max": null,
+      "total_ms_mean": 35.33,
+      "cpu_pct_mean": 99.2,
+      "rss_mb_max": 115.5
+    }
+  }
+}

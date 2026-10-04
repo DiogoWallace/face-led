@@ -1,0 +1,137 @@
+# Facial Validation Service - ambiente local isolado.
+#
+# Portas no host (faixa 181xx, escolhida após inventário do WSL - ver docs/development.md)
+# e publicadas apenas em 127.0.0.1. Rede e volumes próprios; nenhuma rede de outro
+# projeto é utilizada.
+#
+#   cp .env.example .env   # e preencha os segredos locais
+#   make up
+
+name: facial-validation
+
+x-app: &app
+  build:
+    context: .
+    target: dev
+    args:
+      UID: ${UID:-1000}
+      GID: ${GID:-1000}
+  image: facial-validation/api:local
+  env_file: .env
+  environment:
+    DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+    REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379/0
+    S3_ENDPOINT: http://s3:8333
+    # Recursos exclusivos dos testes de integração (banco, db do Redis e bucket próprios).
+    TEST_DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_TEST_DB:-facial_validation_test}
+    TEST_REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379/15
+    TEST_S3_BUCKET: facial-validation-test
+  volumes:
+    - ./:/srv/app
+  depends_on:
+    postgres:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+    s3:
+      condition: service_healthy
+  networks: [facial-validation]
+  restart: unless-stopped
+  security_opt: ["no-new-privileges:true"]
+
+services:
+  api:
+    <<: *app
+    container_name: facial-validation-api
+    ports:
+      - "127.0.0.1:${FVS_API_PORT:-18100}:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3).status == 200 else 1)"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  worker:
+    <<: *app
+    container_name: facial-validation-worker
+    command: ["arq", "app.worker.WorkerSettings"]
+    stop_grace_period: 30s
+
+  postgres:
+    image: postgres:17-alpine
+    container_name: facial-validation-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:?defina POSTGRES_USER no .env}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?defina POSTGRES_PASSWORD no .env}
+      POSTGRES_DB: ${POSTGRES_DB:?defina POSTGRES_DB no .env}
+      POSTGRES_TEST_DB: ${POSTGRES_TEST_DB:-facial_validation_test}
+    ports:
+      - "127.0.0.1:${FVS_POSTGRES_PORT:-18110}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./docker/postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    networks: [facial-validation]
+    security_opt: ["no-new-privileges:true"]
+
+  redis:
+    image: redis:7-alpine
+    container_name: facial-validation-redis
+    restart: unless-stopped
+    command: ["sh", "-c", "exec redis-server --appendonly yes --requirepass \"$$REDIS_PASSWORD\""]
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?defina REDIS_PASSWORD no .env}
+    ports:
+      - "127.0.0.1:${FVS_REDIS_PORT:-18120}:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "REDISCLI_AUTH=\"$$REDIS_PASSWORD\" redis-cli ping | grep -q PONG"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    networks: [facial-validation]
+    security_opt: ["no-new-privileges:true"]
+
+  # Object storage S3 compatível para desenvolvimento (SeaweedFS). Ver ADR-004:
+  # as imagens públicas do MinIO não estavam disponíveis no Docker Hub/quay.io.
+  s3:
+    image: chrislusf/seaweedfs:4.48
+    container_name: facial-validation-s3
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "/opt/fvs/s3-entrypoint.sh"]
+    environment:
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY:?defina S3_ACCESS_KEY no .env}
+      S3_SECRET_KEY: ${S3_SECRET_KEY:?defina S3_SECRET_KEY no .env}
+    ports:
+      - "127.0.0.1:${FVS_S3_PORT:-18130}:8333"
+    volumes:
+      - s3-data:/data
+      - ./docker/s3/entrypoint.sh:/opt/fvs/s3-entrypoint.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:8333/healthz || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 10s
+    networks: [facial-validation]
+    security_opt: ["no-new-privileges:true"]
+
+networks:
+  facial-validation:
+    name: facial-validation-network
+    driver: bridge
+
+volumes:
+  postgres-data:
+    name: facial-validation-postgres-data
+  redis-data:
+    name: facial-validation-redis-data
+  s3-data:
+    name: facial-validation-s3-data

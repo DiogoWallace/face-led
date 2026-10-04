@@ -1,0 +1,5 @@
+# Somente para o POC. torch (CPU) é instalado à parte no Dockerfile, só para o MiniFASNet.
+opencv-python-headless>=4.10,<5
+numpy>=1.26,<3
+psutil>=6
+dlib-bin>=19.24

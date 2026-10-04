@@ -1,0 +1,54 @@
+# Segredos e configuração local
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+*credentials*.json
+*.secret
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# Ferramentas / cache
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+.cache/
+
+# Dados biométricos e capturas locais (nunca versionar)
+/models/
+evaluation-results/
+data/
+datasets/
+captures/
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.webm
+*.npy
+
+# Editor / SO / temporários
+.idea/
+.vscode/
+*.swp
+*.tmp
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,182 @@
+{
+  "model": "minifasnet-v2+v1se",
+  "warning": "IMPORTANTE: o dataset disponível NÃO contém capturas ao vivo nem ataques físicos\n(foto impressa, tela, replay). Os números aqui mostram o comportamento do modelo\nem fotos digitais do LFW e num vídeo sintético feito de uma foto estática. Não\nsão evidência de proteção contra ataques.",
+  "sets": {
+    "lfw_digital_photos": {
+      "n": 50,
+      "labels": {
+        "NO_SINGLE_FACE": 10,
+        "REAL": 39,
+        "SPOOF": 1
+      },
+      "real_score_mean": 0.9338,
+      "ms_mean": 43.05
+    },
+    "lfw_lighting_dark": {
+      "n": 50,
+      "labels": {
+        "NO_SINGLE_FACE": 10,
+        "REAL": 37,
+        "SPOOF": 3
+      },
+      "real_score_mean": 0.8608,
+      "ms_mean": 40.06
+    },
+    "lfw_lighting_bright": {
+      "n": 50,
+      "labels": {
+        "NO_SINGLE_FACE": 11,
+        "REAL": 27,
+        "SPOOF": 12
+      },
+      "real_score_mean": 0.6717,
+      "ms_mean": 25.71
+    },
+    "lfw_camera_sim": {
+      "n": 50,
+      "labels": {
+        "NO_SINGLE_FACE": 11,
+        "SPOOF": 28,
+        "REAL": 11
+      },
+      "real_score_mean": 0.2778,
+      "ms_mean": 120.15
+    },
+    "lfw_blur": {
+      "n": 50,
+      "labels": {
+        "NO_SINGLE_FACE": 8,
+        "SPOOF": 31,
+        "REAL": 11
+      },
+      "real_score_mean": 0.298,
+      "ms_mean": 42.06
+    },
+    "synthetic_static_photo_video": [
+      {
+        "input": "000_static_photo_video.avi",
+        "frames": 30,
+        "labels": {
+          "NO_SINGLE_FACE": 30
+        },
+        "real_score_mean": null,
+        "result": "NO_SINGLE_FACE",
+        "ms": 92.36,
+        "cpu_pct": 357.3,
+        "rss_mb": 322.9
+      },
+      {
+        "input": "001_static_photo_video.avi",
+        "frames": 30,
+        "labels": {
+          "REAL": 30
+        },
+        "real_score_mean": 0.9973,
+        "result": "REAL",
+        "ms": 1292.4,
+        "cpu_pct": 349.0,
+        "rss_mb": 323.1
+      },
+      {
+        "input": "002_static_photo_video.avi",
+        "frames": 30,
+        "labels": {
+          "REAL": 30
+        },
+        "real_score_mean": 0.9886,
+        "result": "REAL",
+        "ms": 992.63,
+        "cpu_pct": 372.7,
+        "rss_mb": 323.1
+      },
+      {
+        "input": "003_static_photo_video.avi",
+        "frames": 30,
+        "labels": {
+          "REAL": 30
+        },
+        "real_score_mean": 0.7791,
+        "result": "REAL",
+        "ms": 1638.93,
+        "cpu_pct": 355.1,
+        "rss_mb": 323.1
+      },
+      {
+        "input": "004_static_photo_video.avi",
+        "frames": 30,
+        "labels": {
+          "REAL": 30
+        },
+        "real_score_mean": 0.9946,
+        "result": "REAL",
+        "ms": 1150.87,
+        "cpu_pct": 364.1,
+        "rss_mb": 323.1
+      },
+      {
+        "input": "005_static_photo_video.avi",
+        "frames": 30,
+        "labels": {
+          "REAL": 30
+        },
+        "real_score_mean": 0.9539,
+        "result": "REAL",
+        "ms": 1240.58,
+        "cpu_pct": 338.6,
+        "rss_mb": 323.1
+      },
+      {
+        "input": "006_static_photo_video.avi",
+        "frames": 30,
+        "labels": {
+          "REAL": 30
+        },
+        "real_score_mean": 1.0,
+        "result": "REAL",
+        "ms": 1846.06,
+        "cpu_pct": 326.6,
+        "rss_mb": 323.1
+      },
+      {
+        "input": "007_static_photo_video.avi",
+        "frames": 30,
+        "labels": {
+          "REAL": 30
+        },
+        "real_score_mean": 0.9391,
+        "result": "REAL",
+        "ms": 3208.74,
+        "cpu_pct": 294.8,
+        "rss_mb": 323.1
+      },
+      {
+        "input": "008_static_photo_video.avi",
+        "frames": 30,
+        "labels": {
+          "REAL": 30
+        },
+        "real_score_mean": 0.901,
+        "result": "REAL",
+        "ms": 2764.68,
+        "cpu_pct": 307.8,
+        "rss_mb": 323.1
+      },
+      {
+        "input": "009_static_photo_video.avi",
+        "frames": 30,
+        "labels": {
+          "REAL": 30
+        },
+        "real_score_mean": 0.9989,
+        "result": "REAL",
+        "ms": 1225.57,
+        "cpu_pct": 353.3,
+        "rss_mb": 323.1
+      }
+    ],
+    "real": "NOT TESTED - sem capturas autorizadas disponíveis",
+    "print": "NOT TESTED - sem capturas autorizadas disponíveis",
+    "screen": "NOT TESTED - sem capturas autorizadas disponíveis",
+    "video_replay": "NOT TESTED - sem capturas autorizadas disponíveis"
+  }
+}

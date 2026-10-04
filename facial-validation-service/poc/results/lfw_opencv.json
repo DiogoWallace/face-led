@@ -1,0 +1,55 @@
+{
+  "engine": "opencv-yunet-sface",
+  "model": "sface_2021dec+yunet_2023mar",
+  "metric": "cosine",
+  "images": 7701,
+  "failure_to_acquire": 0,
+  "pairs_evaluated": {
+    "genuine": 3000,
+    "impostor": 3000
+  },
+  "pairs_skipped_due_to_fta": 0,
+  "genuine_score": {
+    "mean": 0.6489566435561143,
+    "p5": 0.4356490510446747,
+    "p50": 0.6643900791523265
+  },
+  "impostor_score": {
+    "mean": 0.08330083295226799,
+    "p95": 0.22813892324580234,
+    "p50": 0.08008909703312383
+  },
+  "eer": {
+    "threshold": 0.2778,
+    "far": 0.01467,
+    "frr": 0.01467
+  },
+  "operating_points": {
+    "0.01": {
+      "threshold": 0.2949,
+      "far": 0.01,
+      "frr": 0.01667
+    },
+    "0.001": {
+      "threshold": 0.3443,
+      "far": 0.001,
+      "frr": 0.02133
+    }
+  },
+  "reference_threshold": {
+    "value": 0.363,
+    "source": "OpenCV sample (cosine 0.363)",
+    "far": 0.00067,
+    "frr": 0.02433
+  },
+  "ten_fold_accuracy": {
+    "mean": 0.9883,
+    "std": 0.0041
+  },
+  "timing_ms": {
+    "detect_mean": 8.27,
+    "embed_mean": 39.52,
+    "total_s": 375.9
+  },
+  "rss_mb_end": 153.0
+}

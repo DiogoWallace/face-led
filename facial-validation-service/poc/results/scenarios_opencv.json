@@ -1,0 +1,192 @@
+{
+  "engine": "opencv-yunet-sface",
+  "threshold_reference_eer_lfw": 0.2778,
+  "metric": "cosine",
+  "scenarios": {
+    "same_person": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MULTIPLE_FACES": 12,
+        "MATCH": 38
+      },
+      "results_largest_face": {
+        "MATCH": 50
+      },
+      "score_mean": 0.6825,
+      "score_min": 0.3412,
+      "score_max": 0.9063,
+      "total_ms_mean": 23.11,
+      "cpu_pct_mean": 330.3,
+      "rss_mb_max": 166.1
+    },
+    "different_person": {
+      "n": 50,
+      "results_strict_single_face": {
+        "NO_MATCH": 38,
+        "MULTIPLE_FACES": 12
+      },
+      "results_largest_face": {
+        "NO_MATCH": 50
+      },
+      "score_mean": 0.0815,
+      "score_min": -0.0656,
+      "score_max": 0.2411,
+      "total_ms_mean": 22.32,
+      "cpu_pct_mean": 324.2,
+      "rss_mb_max": 166.1
+    },
+    "lighting_dark": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MULTIPLE_FACES": 10,
+        "MATCH": 40
+      },
+      "results_largest_face": {
+        "MATCH": 50
+      },
+      "score_mean": 0.6524,
+      "score_min": 0.3323,
+      "score_max": 0.9002,
+      "total_ms_mean": 21.82,
+      "cpu_pct_mean": 325.1,
+      "rss_mb_max": 166.1
+    },
+    "lighting_bright": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MULTIPLE_FACES": 11,
+        "MATCH": 39
+      },
+      "results_largest_face": {
+        "MATCH": 50
+      },
+      "score_mean": 0.6781,
+      "score_min": 0.3247,
+      "score_max": 0.8891,
+      "total_ms_mean": 22.28,
+      "cpu_pct_mean": 330.8,
+      "rss_mb_max": 166.1
+    },
+    "camera_sim": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MULTIPLE_FACES": 11,
+        "MATCH": 39
+      },
+      "results_largest_face": {
+        "MATCH": 50
+      },
+      "score_mean": 0.6113,
+      "score_min": 0.2829,
+      "score_max": 0.8108,
+      "total_ms_mean": 22.05,
+      "cpu_pct_mean": 326.6,
+      "rss_mb_max": 166.1
+    },
+    "blur": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MULTIPLE_FACES": 8,
+        "MATCH": 35,
+        "NO_MATCH": 7
+      },
+      "results_largest_face": {
+        "MATCH": 43,
+        "NO_MATCH": 7
+      },
+      "score_mean": 0.4147,
+      "score_min": 0.0111,
+      "score_max": 0.6289,
+      "total_ms_mean": 20.76,
+      "cpu_pct_mean": 328.8,
+      "rss_mb_max": 166.1
+    },
+    "small_face": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MULTIPLE_FACES": 5,
+        "MATCH": 30,
+        "NO_MATCH": 9,
+        "NO_FACE": 6
+      },
+      "results_largest_face": {
+        "MATCH": 35,
+        "NO_MATCH": 9,
+        "NO_FACE": 6
+      },
+      "score_mean": 0.4057,
+      "score_min": 0.1004,
+      "score_max": 0.6442,
+      "total_ms_mean": 27.74,
+      "cpu_pct_mean": 332.9,
+      "rss_mb_max": 166.1
+    },
+    "occlusion_lower": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MULTIPLE_FACES": 12,
+        "MATCH": 37,
+        "NO_MATCH": 1
+      },
+      "results_largest_face": {
+        "MATCH": 49,
+        "NO_MATCH": 1
+      },
+      "score_mean": 0.5928,
+      "score_min": 0.2179,
+      "score_max": 0.7572,
+      "total_ms_mean": 22.37,
+      "cpu_pct_mean": 326.4,
+      "rss_mb_max": 166.1
+    },
+    "occlusion_eyes": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MULTIPLE_FACES": 12,
+        "NO_MATCH": 14,
+        "MATCH": 24
+      },
+      "results_largest_face": {
+        "NO_MATCH": 17,
+        "MATCH": 33
+      },
+      "score_mean": 0.3249,
+      "score_min": 0.0938,
+      "score_max": 0.5411,
+      "total_ms_mean": 20.69,
+      "cpu_pct_mean": 334.6,
+      "rss_mb_max": 166.1
+    },
+    "multiple_faces": {
+      "n": 50,
+      "results_strict_single_face": {
+        "MULTIPLE_FACES": 50
+      },
+      "results_largest_face": {
+        "NO_MATCH": 29,
+        "MATCH": 21
+      },
+      "score_mean": 0.33,
+      "score_min": -0.0619,
+      "score_max": 0.897,
+      "total_ms_mean": 24.87,
+      "cpu_pct_mean": 328.1,
+      "rss_mb_max": 166.1
+    },
+    "no_face": {
+      "n": 50,
+      "results_strict_single_face": {
+        "NO_FACE": 50
+      },
+      "results_largest_face": {
+        "NO_FACE": 50
+      },
+      "score_mean": null,
+      "score_min": null,
+      "score_max": null,
+      "total_ms_mean": 4.17,
+      "cpu_pct_mean": 269.0,
+      "rss_mb_max": 166.1
+    }
+  }
+}

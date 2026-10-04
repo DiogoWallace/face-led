@@ -1,0 +1,45 @@
+from app.domain.value_objects.biometric import (
+    BoundingBox,
+    CaptureData,
+    DetectedFace,
+    FaceDetectionResult,
+    FaceEmbedding,
+    FaceLandmarks,
+    LivenessEvidence,
+    LivenessResult,
+    LivenessVerdict,
+    Point,
+    QualityIssue,
+    QualityMeasurements,
+    QualityReport,
+)
+from app.domain.value_objects.retention import CaptureRetention
+from app.domain.value_objects.status import (
+    Decision,
+    ErrorReason,
+    ProcessStatus,
+    RejectionReason,
+    ensure_transition,
+)
+
+__all__ = [
+    "BoundingBox",
+    "CaptureData",
+    "CaptureRetention",
+    "Decision",
+    "DetectedFace",
+    "ErrorReason",
+    "FaceDetectionResult",
+    "FaceEmbedding",
+    "FaceLandmarks",
+    "LivenessEvidence",
+    "LivenessResult",
+    "LivenessVerdict",
+    "Point",
+    "ProcessStatus",
+    "QualityIssue",
+    "QualityMeasurements",
+    "QualityReport",
+    "RejectionReason",
+    "ensure_transition",
+]

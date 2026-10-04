@@ -1,0 +1,59 @@
+{
+  "engine": "dlib-resnet",
+  "model": "dlib_face_recognition_resnet_model_v1+hog+sp5",
+  "metric": "euclidean",
+  "images": 7701,
+  "failure_to_acquire": 35,
+  "pairs_evaluated": {
+    "genuine": 2981,
+    "impostor": 2974
+  },
+  "pairs_skipped_due_to_fta": 45,
+  "genuine_score": {
+    "mean": 0.43919723646647174,
+    "p5": 0.30071139335632324,
+    "p50": 0.4373331367969513
+  },
+  "impostor_score": {
+    "mean": 0.8301687403741745,
+    "p95": 0.9755340188741684,
+    "p50": 0.827703595161438
+  },
+  "eer": {
+    "threshold": 0.6477,
+    "far": 0.01816,
+    "frr": 0.01811
+  },
+  "operating_points": {
+    "0.01": {
+      "threshold": 0.6261,
+      "far": 0.00975,
+      "frr": 0.02248
+    },
+    "0.001": {
+      "threshold": 0.5439,
+      "far": 0.00067,
+      "frr": 0.0946
+    }
+  },
+  "reference_threshold": {
+    "value": 0.6,
+    "source": "face_recognition/dlib tolerance 0.6 (e serviço legado 0.60)",
+    "far": 0.00437,
+    "frr": 0.03187
+  },
+  "legacy_threshold_0_5": {
+    "far": 0.00034,
+    "frr": 0.21
+  },
+  "ten_fold_accuracy": {
+    "mean": 0.9834,
+    "std": 0.0048
+  },
+  "timing_ms": {
+    "detect_mean": 38.73,
+    "embed_mean": 137.98,
+    "total_s": 1373.6
+  },
+  "rss_mb_end": 108.5
+}

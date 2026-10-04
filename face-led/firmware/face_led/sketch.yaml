@@ -1,0 +1,8 @@
+# Build reproduzível: core fixo. Uno clone (CH340) usa o bootloader do Uno.
+default_fqbn: arduino:avr:uno
+default_profile: uno
+profiles:
+  uno:
+    fqbn: arduino:avr:uno
+    platforms:
+      - platform: arduino:avr (1.8.8)

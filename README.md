@@ -1,5 +1,7 @@
 # face-led — validação facial com prova de vida acendendo um LED no Arduino
 
+[![CI](https://github.com/DiogoWallace/face-led/actions/workflows/ci.yml/badge.svg)](https://github.com/DiogoWallace/face-led/actions/workflows/ci.yml)
+
 Projeto de ponta a ponta que junta **visão computacional, backend e hardware**:
 uma pessoa faz a validação facial com **prova de vida** no navegador, um
 microserviço decide se é ela mesma e, quando aprova, um **Arduino Uno acende o
@@ -135,6 +137,11 @@ Passo a passo completo: [serviço](facial-validation-service/docs/development.md
 docker compose -f facial-validation-service/compose.yaml exec -T api pytest -q   # 351 testes
 cd face-led/bridge && uv run pytest -q                                            # 26 testes
 ```
+
+O [CI](.github/workflows/ci.yml) roda a cada push: ruff e os 327 testes do serviço
+que não dependem de infraestrutura, a suíte inteira da ponte e a compilação do
+firmware para o Uno. Os testes de integração (PostgreSQL, Redis e S3 reais) e os
+que exigem os modelos ONNX continuam locais, pelo compose.
 
 ## O que foi verificado e o que não foi
 

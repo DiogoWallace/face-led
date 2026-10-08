@@ -21,6 +21,19 @@ LED** da placa.
 > (APCER/BPCER) não foram medidas. O próprio serviço se recusa a subir assim
 > fora de ambiente local ou de teste.
 
+## A página de teste
+
+<p align="center">
+  <img src="docs/telas/prova-de-vida-pagina-de-teste.webp" width="520"
+       alt="Página de teste da prova de vida: passos sorteados (esquerda, aproximar, direita), instrução para encaixar o rosto no oval, preview da câmera com o oval tracejado, barra de tempo e telemetria do desafio">
+</p>
+
+A página `/dev/liveness` (só existe com `APP_ENV=local`) guia a captura: o
+servidor sorteia os passos do desafio, cada quadro é medido pelo worker e o passo
+só avança quando é cumprido. Na captura acima a câmera é um vídeo sintético, sem
+rosto — por isso o retorno "Não vejo seu rosto" e o oval ainda tracejado (ele fica
+verde e contínuo quando o rosto está bem posicionado).
+
 ## O que tem aqui
 
 | Pasta | O que é | Stack |
